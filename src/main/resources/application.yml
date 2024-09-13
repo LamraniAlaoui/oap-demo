@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:library_db
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+    platform: h2
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: update  # Creates and updates schema automatically
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+  cache:
+    type: simple  # Enable basic caching
+  jackson:
+    serialization:
+      fail-on-empty-beans: false  # Fix serialization issue with DTOs
+  data:
+    redis:
+      host: localhost
+      port: 6379
